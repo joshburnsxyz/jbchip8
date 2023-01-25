@@ -17,13 +17,18 @@ class cpu(pyglet.window.Window):
   def on_key_release(self,symbol,modifiers):
     pass
 
-  def main_loop(self):
-    pass
+  def main_loop(self, rom_path):
+    self.initialize()
+    self.load_rom(rom_path)
+    while not self.has_exit:
+      self.dispatch_events()
+      self.cycle()
+      self.draw()
 
   def initialize(self):
     pass
 
-  def load_rom(self):
+  def load_rom(self,rom_path):
     pass
 
   def cycle(self):
