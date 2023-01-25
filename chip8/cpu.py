@@ -6,7 +6,7 @@ class cpu(pyglet.window.Window):
     self.memory = [0]*16
     self.gpio = [0]*16
     self.sound_timer = 0
-    self.delay_buffer = 0
+    self.delay_timer = 0
     self.index = 0
     self.program_counter = 0
     self.opcode = 0
@@ -35,7 +35,7 @@ class cpu(pyglet.window.Window):
     self.__init__()
 
     # Set Program Counter
-    self.pc = 0x200
+    self.program_counter = 0x200
 
     i = 0
     while i < 80:
@@ -51,7 +51,19 @@ class cpu(pyglet.window.Window):
       i += 1
 
   def cycle(self):
-    pass
+    self.opcode = self.memory[self.program_counter]
+    # TODO: process opcode
+
+    # Check timers
+    self.program_counter += 2
+    if self.delay_timer > 0:
+      self.delay_timer -= 1
+    if self.sound_timer > 0:
+      self.sound_timer -= 1
+      if self.sound_timer == 0:
+        # TODO: play sound
+    
+
 
   def draw(self):
     pass
