@@ -44,7 +44,11 @@ class cpu(pyglet.window.Window):
       i += 1
 
   def load_rom(self,rom_path):
-    pass
+    binary = open(rom_path, "rb")
+    i = 0
+    while i < len(binary):
+      self.memory[i+0x200] = ord(binary[i])
+      i += 1
 
   def cycle(self):
     pass
