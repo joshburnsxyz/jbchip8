@@ -5,7 +5,7 @@ description = ""
 authors = ["Josh Burns <joshyburnss@gmail.com>"]
 readme = "README.md"
 include = [
-  "assets/buzz.wav"
+  "assets/buzz.wav",
   "assets/pixel.png"
 ]
 packages = [
