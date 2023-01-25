@@ -471,11 +471,6 @@ class cpu (pyglet.window.Window):
       self.key_inputs[KEY_MAP[symbol]] = 0
       
   def main(self, rom_file):
-    if len(sys.argv) <= 1:
-      print("Usage: python chip8.py <path to chip8 rom> <log>")
-      print("where: <path to chip8 rom> - path to Chip8 rom")
-      print("     : <log> - if present, prints log messages to console")
-      return
     self.initialize()
     self.load_rom(rom_file)
     while not self.has_exit:
