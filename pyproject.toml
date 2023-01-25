@@ -6,10 +6,14 @@ authors = ["Josh Burns <joshyburnss@gmail.com>"]
 readme = "README.md"
 include = [
   "assets/buzz.wav"
+  "assets/pixel.png"
 ]
 packages = [
   { include = "chip8" }
 ]
+
+[tool.poetry.scripts]
+jbchip8 = 'chip8.console:run'
 
 [tool.poetry.dependencies]
 python = "^3.11"
