@@ -1,5 +1,4 @@
-# pyChip8Emu: Simple Chip8 interpreter/emulator.
-# See README.md for more info
+# pyChip8Emu: Simple Chip8 interpreter/emulator. Original code: https://raw.githubusercontent.com/maranas/pyChip8Emu/master/chip8.py
 # Requires pyglet
 
 import itertools
