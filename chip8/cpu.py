@@ -9,7 +9,9 @@ class cpu(pyglet.window.Window):
     self.delay_buffer = 0
     self.index = 0
     self.program_counter = 0
+    self.opcode = 0
     self.stack = []
+    self.should_draw = False
 
   def on_key_press(self,symbol,modifiers):
     pass
@@ -26,7 +28,20 @@ class cpu(pyglet.window.Window):
       self.draw()
 
   def initialize(self):
-    pass
+    # Clear memory
+    self.clear()
+
+    # Re-initialize values
+    self.__init__()
+
+    # Set Program Counter
+    self.pc = 0x200
+
+    i = 0
+    while i < 80:
+      # 80 Character font set loaded into memory
+      self.memory[i] = self.fonts[i]
+      i += 1
 
   def load_rom(self,rom_path):
     pass
