@@ -52,7 +52,18 @@ class cpu(pyglet.window.Window):
 
   def cycle(self):
     self.opcode = self.memory[self.program_counter]
-    # TODO: process opcode
+
+    # Process opcode
+    self.vx = (self.opcode & 0x0f00) >> 8
+    self.vy = (self.opcode & 0x00f0) >> 4
+
+    self.program_counter += 2
+
+    extracted_op = self.opcode & 0xf000
+    try:
+      self.funcmap[extracted_op]()
+    except:
+      print(f"Unknown instruction: {self.opcode}")
 
     # Check timers
     self.program_counter += 2
@@ -62,8 +73,6 @@ class cpu(pyglet.window.Window):
       self.sound_timer -= 1
       if self.sound_timer == 0:
         # TODO: play sound
-    
-
 
   def draw(self):
     pass
