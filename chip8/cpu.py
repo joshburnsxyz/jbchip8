@@ -68,8 +68,8 @@ class cpu (pyglet.window.Window):
   should_draw = False
   key_wait = False
   
-  pixel = pyglet.resource.image('pixel.png') # pseudo-pixelwise drawing with 10x10 boxes
-  buzz = pyglet.resource.media('buzz.wav', streaming=False)
+  pixel = pyglet.resource.image('assets/pixel.png') # pseudo-pixelwise drawing with 10x10 boxes
+  buzz = pyglet.resource.media('assets/buzz.wav', streaming=False)
 
   # "pixel" buffer
   batch = pyglet.graphics.Batch()
