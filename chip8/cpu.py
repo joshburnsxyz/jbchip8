@@ -9,11 +9,9 @@ import sys
 import time
 
 from pyglet.sprite import Sprite
-from .keymap import LOGGING, KEY_MAP
-          
-def log(msg):
-  if LOGGING:
-    print(msg)
+from .constants import KEY_MAP
+from .helpers import log
+
   
 class cpu (pyglet.window.Window):
   memory = [0]*4096 # max 4096
