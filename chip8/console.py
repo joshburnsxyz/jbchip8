@@ -14,3 +14,5 @@ def run():
   f = cpu.cpu(640,320)
   f.main(args.filename)
 
+if __name__ == '__main__':
+  run()
