@@ -16,8 +16,9 @@ packages = [
 jbchip8 = 'chip8.console:run'
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "3.10.10"
 pyglet = "^2.0.3"
+pyinstaller = "^5.8.0"
 
 
 [build-system]
